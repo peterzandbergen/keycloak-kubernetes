@@ -28,6 +28,8 @@ spec:
           value: password
         - name: POSTGRES_USER
           value: keycloak
+        - name: PGDATA
+          value: /var/lib/postgresql/data/pgdata
         image: postgres
         resources: {}
         volumeMounts:
