@@ -8,13 +8,13 @@ metadata:
   creationTimestamp: null
   labels:
     io.kompose.service: postgres
-  name: postgres
+  name: postgres-keycloak
 spec:
   ports:
   - name: "5432"
     port: 5432
-    # targetPort: 5432
   selector:
     io.kompose.service: postgres
+  type: ClusterIP
 status:
-  # loadBalancer: {}
+  loadBalancer: {}

@@ -13,8 +13,8 @@ spec:
   ports:
   - name: "8080"
     port: 8080
-    targetPort: 8080
   selector:
     io.kompose.service: keycloak
+  type: NodePort
 status:
   loadBalancer: {}

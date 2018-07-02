@@ -21,10 +21,9 @@ spec:
       containers:
       - env:
         - name: DB_ADDR
-          # value: postgres
-          value: "172.17.0.4"
+          value: postgres-keycloak
         - name: DB_DATABASE
-          value: keycloak
+          value: "keycloak"
         - name: DB_PASSWORD
           value: password
         - name: DB_USER
