@@ -19,7 +19,8 @@ spec:
         io.kompose.service: keycloak
     spec:
       containers:
-      - env:
+      - name: keycloak
+        env:
         - name: DB_ADDR
           value: postgres-keycloak
         - name: DB_DATABASE
@@ -35,9 +36,12 @@ spec:
         - name: KEYCLOAK_USER
           value: admin
         image: jboss/keycloak
-        name: keycloak
         ports:
         - containerPort: 8080
         resources: {}
+      initContainers:
+      - name: init-postgres-keycloak-service
+        image: busybox
+        command: ['sh', '-c', 'until nslookup postgres-keycloak; do echo waiting for postgres-keycloak; sleep 2; done;']
       restartPolicy: Always
 status: {}
