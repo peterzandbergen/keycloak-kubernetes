@@ -31,13 +31,15 @@ spec:
         - name: PGDATA
           value: /var/lib/postgresql/data/pgdata
         image: postgres
+        ports:
+        - containerPort: 5432
         resources: {}
         volumeMounts:
         - mountPath: /var/lib/postgresql/data
-          name: postgres-data
+          name: postgres-data-vol
       restartPolicy: Always
       volumes:
-      - name: postgres-data
+      - name: postgres-data-vol
         persistentVolumeClaim:
-          claimName: postgres-data
+          claimName: postgres-data-pvc
 status: {}

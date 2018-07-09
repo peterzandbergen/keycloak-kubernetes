@@ -4,7 +4,7 @@ metadata:
   creationTimestamp: null
   labels:
     io.kompose.service: postgres-data
-  name: postgres-data
+  name: postgres-data-pvc
 spec:
   accessModes:
   - ReadWriteOnce
